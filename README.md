@@ -12,7 +12,7 @@ The current version provides dependency-light PyTorch implementations of the cor
 - `EncodingModule` — latent-grid alignment with grouped dilation modulation.
 - `FusionBridge` — branch-normalized multi-scale fusion for decoder/skip pathways.
 - `NeuromodulationController` — differentiable resource-aware controls for gates, heads, dilations, and fusion weights.
-- Buildable CNN and ViT demo networks without MMCV, MMSegmentation, Detectron2, timm, HuggingFace, or custom CUDA dependencies.
+- Buildable CNN and ViT demo networks without custom dependencies.
 
 ## Design principles
 
