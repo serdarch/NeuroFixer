@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "neurofixer"
+version = "0.1.0"
+description = "Backbone-agnostic build and support tools for NeuroFuser-style attention fusion."
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [{name = "Serdar Erişen"}]
+dependencies = ["torch>=2.0"]
+keywords = ["semantic segmentation", "attention", "neurofuser", "cnn", "vit", "computer vision"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+[project.scripts]
+neurofixer-demo = "neurofixer.demo.run_demo:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["neurofixer*"]

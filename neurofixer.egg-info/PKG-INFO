@@ -1,3 +1,18 @@
+Metadata-Version: 2.4
+Name: neurofixer
+Version: 0.1.0
+Summary: Backbone-agnostic build and support tools for NeuroFuser-style attention fusion.
+Author: Serdar Erişen
+Keywords: semantic segmentation,attention,neurofuser,cnn,vit,computer vision
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: torch>=2.0
+Dynamic: license-file
+
 # NeuroFixer
 
 **NeuroFixer** is a public-demo oriented build and support repository for NeuroFuser-style attention-fusion models. It is designed as a lightweight, backbone-agnostic library that can grow toward a future:
