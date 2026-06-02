@@ -1,6 +1,6 @@
 # NeuroFixer
 
-**NeuroFixer** is a public-demo oriented build and support repository for NeuroFuser-style attention-fusion models. It is designed as a lightweight, backbone-agnostic library that can grow toward a future:
+**NeuroFixer** is a public-demo oriented build and support repository for NeuroFuser-style attention-fusion models. It is designed as a lightweight, backbone-agnostic library that grows toward:
 
 ```bash
 pip install neurofixer
