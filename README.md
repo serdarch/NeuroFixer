@@ -78,3 +78,13 @@ tests/           # smoke tests
 Copyright © Serdar Erişen, 2026. All rights reserved.
 
 A formal public license has not yet been selected. Until then, this repository should be treated as a controlled public demo / research preview rather than a permissively licensed release.
+\n\n## License
+
+NeuroFixer is released under a custom **Research Preview License**.
+
+You may view, clone, run, and evaluate the repository for personal, academic,
+and non-commercial research purposes. Commercial use, redistribution as a
+competing library, relicensing, sublicensing, or use of the project names to
+imply endorsement require prior written permission from the copyright holder.
+
+See [LICENSE](LICENSE) for the full terms.\n

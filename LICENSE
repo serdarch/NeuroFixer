@@ -1,21 +1,37 @@
-MIT License
+NeuroFixer Research Preview License
 
 Copyright (c) 2026 Serdar Erişen
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+This repository is released as a public research preview and demonstration
+implementation of NeuroFuser-inspired, backbone-agnostic attention-fusion modules.
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+Permission is granted to view, clone, run, and evaluate this repository for
+personal, academic, and non-commercial research purposes.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+The following uses are not permitted without prior written permission from the
+copyright holder:
+
+1. Commercial use, including integration into commercial products or services.
+2. Redistribution of modified or unmodified copies as a competing library.
+3. Repackaging, relicensing, sublicensing, or selling the software.
+4. Use of the repository name, NeuroFixer, NeuroFuser, or related project names
+   to imply endorsement, official collaboration, or authorship.
+5. Uploading trained weights, private experimental assets, unpublished datasets,
+   or journal-specific confidential material derived from the author's research
+   without permission.
+
+Academic citation and attribution are required when this repository, its modules,
+or its design ideas are used in research, prototypes, demonstrations, derivative
+works, reports, or publications.
+
+This repository is provided "as is", without warranty of any kind, express or
+implied, including but not limited to the warranties of merchantability, fitness
+for a particular purpose, and non-infringement. In no event shall the copyright
+holder be liable for any claim, damages, or other liability arising from the use
+of this repository.
+
+For commercial licensing, collaboration, or permission requests, please contact:
+
+Serdar Erişen
+GitHub: https://github.com/serdarch
+Repository: https://github.com/serdarch/NeuroFixer
