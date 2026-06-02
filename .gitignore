@@ -1,0 +1,32 @@
+# Python cache / bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Packaging / build outputs
+*.egg-info/
+dist/
+build/lib/
+build/bdist.*/
+.eggs/
+*.egg
+
+# Test / notebook cache
+.pytest_cache/
+.ipynb_checkpoints/
+
+# OS / editor files
+.DS_Store
+.vscode/
+.idea/
+
+# Large or private assets
+checkpoints/
+weights/
+*.pth
+*.pt
+*.ckpt
+*.onnx
+*.safetensors
+data/
+datasets/
