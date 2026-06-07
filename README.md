@@ -1,17 +1,15 @@
 # NeuroFixer
 
-**NeuroFixer** is the public companion demo and library-oriented repository for the Pattern Recognition article:
+**NeuroFixer** is a lightweight, installable PyTorch library for building and testing backbone-agnostic attention-fusion modules and model-family demos.
+
+The first public model family is **`neurofuser_demo`**, a companion implementation inspired by the Pattern Recognition article:
 
 **NeuroFuser: Resource-Aware Neuromodulation of Multi-scale Fusion Attention for Domain Adaptive Segmentation**
 Serdar Erişen and André Borrmann
 *Pattern Recognition*, 2026
 DOI: **10.1016/j.patcog.2026.114167**
 
-NeuroFixer provides a lightweight, backbone-agnostic PyTorch implementation path for NeuroFuser-style attention-fusion modules. It is designed as a public-demo safe repository that can grow toward a future installable package:
-
-```bash
-pip install neurofixer
-```
+NeuroFixer is designed as a global attention-based model builder. It provides reusable modules such as `EncodingGate`, `EncodingModule`, `FusionBridge`, and `NeuromodulationController`, together with buildable CNN and ViT demo models. Future attention projects can be added as separate model families under `neurofixer.models`.
 
 The current version provides dependency-light PyTorch implementations of the core NeuroFuser-inspired modules:
 
@@ -33,12 +31,27 @@ This repository is intentionally released as a public demo and development base.
 2. **Minimal dependencies:** PyTorch is the only required runtime dependency.
 3. **Public-demo safe:** no pretrained weights, no private backbones, and no journal-specific experimental assets are included.
 4. **Research extensible:** the modules are intentionally modular so user feedback can guide future additions.
-5. **Future package-ready:** the repository structure is prepared for gradual development toward an installable `neurofixer` package.
+5. **Model-family oriented:** new attention projects can be added under `neurofixer.models` without changing the core module API.
 
-## Quick start from source
+## Installation
+
+Install the current public release from PyPI:
 
 ```bash
+pip install neurofixer
+```
+
+For development from source:
+
+```bash
+git clone https://github.com/serdarch/NeuroFixer.git
+cd NeuroFixer
 pip install -e .
+```
+
+## Quick start
+
+```bash
 python -m neurofixer.demo.run_demo --backbone cnn
 python -m neurofixer.demo.run_demo --backbone vit
 ```
@@ -47,6 +60,7 @@ Expected output:
 
 ```python
 {'backbone': 'cnn', 'input_shape': (1, 3, 128, 128), 'output_shape': (1, 19, 128, 128)}
+{'backbone': 'vit', 'input_shape': (1, 3, 128, 128), 'output_shape': (1, 19, 128, 128)}
 ```
 
 ## Python usage
@@ -66,11 +80,44 @@ vit_logits = vit_model(x)
 print(vit_logits.shape)
 ```
 
+## Global model-family structure
+
+NeuroFixer is organized as a lightweight library for reusable attention-fusion modules and model-family demos. The first model family is:
+
+```text
+neurofixer.models.neurofuser_demo
+```
+
+This folder contains lightweight CNN and ViT demonstration networks that use the NeuroFuser-inspired `EncodingGate`, `EncodingModule`, `FusionBridge`, and `NeuromodulationController` components.
+
+Example imports:
+
+```python
+from neurofixer.models.neurofuser_demo import build_cnn_neurofixer
+from neurofixer.models.neurofuser_demo import build_vit_neurofixer
+from neurofixer.models.registry import list_models, build_model
+```
+
+The long-term design allows future model families to be added under:
+
+```text
+neurofixer/models/
+  neurofuser_demo/
+  token_gate/
+  crossfusion/
+  cf3a/
+  cf4a/
+  adapters/
+```
+
+without changing the public API of the core attention modules.
+
 ## Repository layout
 
 ```text
 neurofixer/
   modules/       # EG, EM, FBr, neuromodulation controller
+  models/        # model-family demos, including neurofuser_demo
   build/         # CNN and ViT demo builders
   demo/          # CLI demo and smoke-test helpers
   utils/         # token/grid helpers for CNN-ViT interoperability
@@ -81,25 +128,6 @@ neurofuser_demo/ # compatibility demo wrappers
 tests/           # smoke tests
 ```
 
-
-## Model families
-
-NeuroFixer is organized as a lightweight library for reusable attention-fusion modules and model-family demos. The first model family is:
-
-```text
-neurofixer.models.neurofuser_demo
-```
-
-This folder contains lightweight CNN and ViT demonstration networks that use the NeuroFuser-inspired `EncodingGate`, `EncodingModule`, `FusionBridge`, and `NeuromodulationController` components. Future attention projects can be added under `neurofixer/models/` as separate model families without changing the core module API.
-
-Example imports:
-
-```python
-from neurofixer.models.neurofuser_demo import build_cnn_neurofixer
-from neurofixer.models.neurofuser_demo import build_vit_neurofixer
-from neurofixer.models.registry import list_models, build_model
-```
-
 ## Development roadmap
 
 * Add config dataclasses for larger CNN/ViT variants.
@@ -107,7 +135,7 @@ from neurofixer.models.registry import list_models, build_model
 * Add palette-alignment utilities for training-free domain transfer.
 * Add public examples for Cityscapes-like and ADE20K-like class counts without releasing private weights.
 * Add GitHub Actions smoke tests for CPU-only import and demo execution.
-* Prepare future package metadata for `pip install neurofixer`.
+* Expand `neurofixer.models` with additional attention-fusion model families.
 
 ## Citation
 
