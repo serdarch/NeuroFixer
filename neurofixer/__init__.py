@@ -1,7 +1,16 @@
-"""NeuroFixer: build and support tools for NeuroFuser-style attention fusion."""
+"""NeuroFixer: lightweight attention-fusion modules and model-family demos."""
 
-from neurofixer.modules import EncodingGate, EncodingModule, FusionBridge, NeuromodulationController
-from neurofixer.build import build_cnn_neurofixer, build_vit_neurofixer
+from neurofixer.modules import (
+    EncodingGate,
+    EncodingModule,
+    FusionBridge,
+    NeuromodulationController,
+)
+
+from neurofixer.models.neurofuser_demo import (
+    build_cnn_neurofixer,
+    build_vit_neurofixer,
+)
 
 __version__ = "0.1.0"
 

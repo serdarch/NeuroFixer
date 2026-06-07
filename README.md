@@ -81,6 +81,25 @@ neurofuser_demo/ # compatibility demo wrappers
 tests/           # smoke tests
 ```
 
+
+## Model families
+
+NeuroFixer is organized as a lightweight library for reusable attention-fusion modules and model-family demos. The first model family is:
+
+```text
+neurofixer.models.neurofuser_demo
+```
+
+This folder contains lightweight CNN and ViT demonstration networks that use the NeuroFuser-inspired `EncodingGate`, `EncodingModule`, `FusionBridge`, and `NeuromodulationController` components. Future attention projects can be added under `neurofixer/models/` as separate model families without changing the core module API.
+
+Example imports:
+
+```python
+from neurofixer.models.neurofuser_demo import build_cnn_neurofixer
+from neurofixer.models.neurofuser_demo import build_vit_neurofixer
+from neurofixer.models.registry import list_models, build_model
+```
+
 ## Development roadmap
 
 * Add config dataclasses for larger CNN/ViT variants.
