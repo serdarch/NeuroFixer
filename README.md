@@ -1,6 +1,13 @@
 # NeuroFixer
 
-**NeuroFixer** is a public-demo oriented build and support repository for NeuroFuser-style attention-fusion models. It is designed as a lightweight, backbone-agnostic library that grows toward:
+**NeuroFixer** is the public companion demo and library-oriented repository for the Pattern Recognition article:
+
+**NeuroFuser: Resource-Aware Neuromodulation of Multi-scale Fusion Attention for Domain Adaptive Segmentation**
+Serdar Erişen and André Borrmann
+*Pattern Recognition*, 2026
+DOI: **10.1016/j.patcog.2026.114167**
+
+NeuroFixer provides a lightweight, backbone-agnostic PyTorch implementation path for NeuroFuser-style attention-fusion modules. It is designed as a public-demo safe repository that can grow toward a future installable package:
 
 ```bash
 pip install neurofixer
@@ -8,11 +15,17 @@ pip install neurofixer
 
 The current version provides dependency-light PyTorch implementations of the core NeuroFuser-inspired modules:
 
-- `EncodingGate` — per-location/channel gated feature calibration with residual flow.
-- `EncodingModule` — latent-grid alignment with grouped dilation modulation.
-- `FusionBridge` — branch-normalized multi-scale fusion for decoder/skip pathways.
-- `NeuromodulationController` — differentiable resource-aware controls for gates, heads, dilations, and fusion weights.
-- Buildable CNN and ViT demo networks without custom dependencies.
+* `EncodingGate` — per-location/channel gated feature calibration with residual flow.
+* `EncodingModule` — latent-grid alignment with grouped dilation modulation.
+* `FusionBridge` — branch-normalized multi-scale fusion for decoder/skip pathways.
+* `NeuromodulationController` — differentiable resource-aware controls for gates, heads, dilations, and fusion weights.
+* Buildable CNN and ViT demo networks without custom dependencies.
+
+## Relation to the paper
+
+The published NeuroFuser paper introduces resource-aware neuromodulation of multi-scale fusion attention for domain-adaptive semantic segmentation. NeuroFixer is a public-facing, lightweight implementation and experimentation repository inspired by the paper’s main design principles: backbone-agnostic fusion, controllable attention modulation, CNN/ViT compatibility, and dependency-light modularity.
+
+This repository is intentionally released as a public demo and development base. It does not include private training assets, pretrained weights, full experimental pipelines, journal submission files, or confidential reviewer-related material.
 
 ## Design principles
 
@@ -20,6 +33,7 @@ The current version provides dependency-light PyTorch implementations of the cor
 2. **Minimal dependencies:** PyTorch is the only required runtime dependency.
 3. **Public-demo safe:** no pretrained weights, no private backbones, and no journal-specific experimental assets are included.
 4. **Research extensible:** the modules are intentionally modular so user feedback can guide future additions.
+5. **Future package-ready:** the repository structure is prepared for gradual development toward an installable `neurofixer` package.
 
 ## Quick start from source
 
@@ -42,6 +56,7 @@ import torch
 from neurofixer import build_cnn_neurofixer, build_vit_neurofixer
 
 x = torch.randn(1, 3, 128, 128)
+
 model = build_cnn_neurofixer(num_classes=19)
 logits = model(x)
 print(logits.shape)
@@ -59,6 +74,7 @@ neurofixer/
   build/         # CNN and ViT demo builders
   demo/          # CLI demo and smoke-test helpers
   utils/         # token/grid helpers for CNN-ViT interoperability
+
 functions/       # compatibility wrappers for the early folder plan
 build/           # compatibility build entry points
 neurofuser_demo/ # compatibility demo wrappers
@@ -67,23 +83,40 @@ tests/           # smoke tests
 
 ## Development roadmap
 
-- Add config dataclasses for larger CNN/ViT variants.
-- Add optional FlashAttention/xFormers adapters only as optional extras, never as required dependencies.
-- Add palette-alignment utilities for training-free domain transfer.
-- Add public examples for Cityscapes-like and ADE20K-like class counts without releasing private weights.
-- Add GitHub Actions smoke tests for CPU-only import and demo execution.
+* Add config dataclasses for larger CNN/ViT variants.
+* Add optional FlashAttention/xFormers adapters only as optional extras, never as required dependencies.
+* Add palette-alignment utilities for training-free domain transfer.
+* Add public examples for Cityscapes-like and ADE20K-like class counts without releasing private weights.
+* Add GitHub Actions smoke tests for CPU-only import and demo execution.
+* Prepare future package metadata for `pip install neurofixer`.
 
-## Rights
+## Citation
+
+If you use NeuroFixer, NeuroFuser-inspired modules, or the design ideas in this repository, please cite the associated Pattern Recognition article:
+
+```bibtex
+@article{erisen2026neurofuser,
+  title   = {NeuroFuser: Resource-Aware Neuromodulation of Multi-scale Fusion Attention for Domain Adaptive Segmentation},
+  author  = {Eri{\c{s}}en, Serdar and Borrmann, Andr{\'e}},
+  journal = {Pattern Recognition},
+  year    = {2026},
+  doi     = {10.1016/j.patcog.2026.114167}
+}
+```
+
+## License and rights
 
 Copyright © Serdar Erişen, 2026. All rights reserved.
 
-A formal public license has not yet been selected. Until then, this repository should be treated as a controlled public demo / research preview rather than a permissively licensed release.
-
 NeuroFixer is released under a custom **Research Preview License**.
 
-You may view, clone, run, and evaluate the repository for personal, academic,
-and non-commercial research purposes. Commercial use, redistribution as a
-competing library, relicensing, sublicensing, or use of the project names to
-imply endorsement require prior written permission from the copyright holder.
+You may view, clone, run, and evaluate the repository for personal, academic, and non-commercial research purposes. Commercial use, redistribution as a competing library, relicensing, sublicensing, or use of the project names to imply endorsement require prior written permission from the copyright holder.
 
 See [LICENSE](LICENSE) for the full terms.
+
+## Contact
+
+For academic collaboration, licensing, or repository-related questions, please contact the repository owner through GitHub:
+
+**GitHub:** `@serdarch`
+**Repository:** `serdarch/NeuroFixer`
