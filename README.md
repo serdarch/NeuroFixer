@@ -154,6 +154,17 @@ requirements/                # optional requirements files
 4. **Model-family oriented:** future attention projects can be added under `neurofixer.models`.
 5. **PyPI-ready:** the repository is structured as an installable package.
 
+
+## Community contributions
+
+NeuroFixer is designed to grow as a lightweight research library for attention-fusion modules and model-family builders. Researchers are welcome to contribute new attention heads, gating functions, fusion bridges, token-mixing blocks, CNN/ViT adapters, and compact model-family demos.
+
+The first official model family is `neurofuser_basic`, which provides public EG, EM, FBr, and neuromodulation-controller blocks inspired by the NeuroFuser Pattern Recognition paper. Future contributed modules can be added as separate model families or reusable attention components under `neurofixer.models` and `neurofixer.modules`.
+
+Contributions should be lightweight, PyTorch-based, CPU-testable, documented with clear input/output tensor shapes, and accompanied by minimal tests or examples. Contributions based on papers or preprints should include citation and attribution.
+
+Please see [CONTRIBUTING.md](CONTRIBUTING.md) for contribution guidelines.
+
 ## Citation
 
 If you use NeuroFixer, NeuroFuser Basic, or the design ideas in this repository, please cite the associated Pattern Recognition article:
