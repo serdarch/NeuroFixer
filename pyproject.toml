@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "neurofixer"
-version = "0.1.0"
-description = "Backbone-agnostic build and support tools for NeuroFuser-style attention fusion."
+version = "0.1.1"
+description = "A lightweight PyTorch library for NeuroFuser Basic and backbone-agnostic attention-fusion model families."
 readme = "README.md"
 requires-python = ">=3.9"
 authors = [{name = "Serdar Erişen"}]

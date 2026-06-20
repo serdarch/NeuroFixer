@@ -1,27 +1,31 @@
-"""Small model registry for NeuroFixer model-family demos."""
+"""Model registry for NeuroFixer model families."""
 
 from __future__ import annotations
 
 from typing import Callable, Dict
 
-from neurofixer.models.neurofuser_demo import (
-    build_cnn_neurofixer,
-    build_vit_neurofixer,
+from neurofixer.models.neurofuser_basic import (
+    build_neurofuser_basic_cnn,
+    build_neurofuser_basic_vit,
 )
 
 MODEL_REGISTRY: Dict[str, Callable] = {
-    "neurofuser_demo_cnn": build_cnn_neurofixer,
-    "neurofuser_demo_vit": build_vit_neurofixer,
+    "neurofuser_basic_cnn": build_neurofuser_basic_cnn,
+    "neurofuser_basic_vit": build_neurofuser_basic_vit,
+
+    # Backward-compatible names from the first public demo release.
+    "neurofuser_demo_cnn": build_neurofuser_basic_cnn,
+    "neurofuser_demo_vit": build_neurofuser_basic_vit,
 }
 
 
 def list_models() -> list[str]:
-    """Return available public demo model identifiers."""
+    """Return available model identifiers."""
     return sorted(MODEL_REGISTRY.keys())
 
 
 def build_model(name: str, **kwargs):
-    """Build a registered NeuroFixer demo model by name."""
+    """Build a registered NeuroFixer model by name."""
     if name not in MODEL_REGISTRY:
         available = ", ".join(list_models())
         raise KeyError(f"Unknown model '{name}'. Available models: {available}")
