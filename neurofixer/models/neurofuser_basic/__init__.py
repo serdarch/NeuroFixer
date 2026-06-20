@@ -1,9 +1,16 @@
 """NeuroFuser Basic model family.
 
 NeuroFuser Basic is the first official model family in NeuroFixer. It exposes
-the public EG, EM, FBr, and neuromodulation-controller blocks and provides
-lightweight CNN/ViT builders for testing attention-fusion pipelines.
+public EG, EM, FBr, and neuromodulation-controller functions together with
+lightweight CNN/ViT builders.
 """
+
+from neurofixer.models.neurofuser_basic.attention import (
+    NeuroFuserBasicEG,
+    NeuroFuserBasicEM,
+    NeuroFuserBasicFBr,
+    NeuroFuserBasicController,
+)
 
 from neurofixer.models.neurofuser_basic.blocks import (
     EncodingGate,
@@ -12,29 +19,25 @@ from neurofixer.models.neurofuser_basic.blocks import (
     NeuromodulationController,
 )
 
-try:
-    from neurofixer.models.neurofuser_basic.cnn import (
-        NeuroFuserBasicCNN,
-        build_neurofuser_basic_cnn,
-    )
-except Exception:  # pragma: no cover
-    NeuroFuserBasicCNN = None
-    build_neurofuser_basic_cnn = None
+from neurofixer.models.neurofuser_basic.cnn import (
+    NeuroFuserBasicCNN,
+    build_neurofuser_basic_cnn,
+)
 
-try:
-    from neurofixer.models.neurofuser_basic.vit import (
-        NeuroFuserBasicViT,
-        build_neurofuser_basic_vit,
-    )
-except Exception:  # pragma: no cover
-    NeuroFuserBasicViT = None
-    build_neurofuser_basic_vit = None
+from neurofixer.models.neurofuser_basic.vit import (
+    NeuroFuserBasicViT,
+    build_neurofuser_basic_vit,
+)
 
 __all__ = [
     "EncodingGate",
     "EncodingModule",
     "FusionBridge",
     "NeuromodulationController",
+    "NeuroFuserBasicEG",
+    "NeuroFuserBasicEM",
+    "NeuroFuserBasicFBr",
+    "NeuroFuserBasicController",
     "NeuroFuserBasicCNN",
     "NeuroFuserBasicViT",
     "build_neurofuser_basic_cnn",
